@@ -1,0 +1,22 @@
+[
+    {
+        "sensorId": "Sensor1",
+        "thresholdValue": 45
+    },
+    {
+        "sensorId": "Sensor2",
+        "thresholdValue": 55
+    },
+    {
+        "sensorId": "Sensor3",
+        "thresholdValue": 35
+    },
+    {
+        "sensorId": "Sensor4",
+        "thresholdValue": 47
+    },
+    {
+        "sensorId": "Sensor5",
+        "thresholdValue": 65
+    }
+]

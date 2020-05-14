@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <script src="./js/router.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid h-100"> 
+    <div class="row h-100">
+
+
+      <!-- NAVIGATION COLUMN -->
+      <nav class="col-12 col-md-3 col-xl-2 menu-col sticky-top overflow-hidden px-0"> <!-- Maria bytta denne til nav og la til klassen px-0 -->
+        <div class="row h-100 py-2 px-0">
+          
+          <div class="col-12 align-self-start">
+            <div class="container d-flex p-3 pb-1 pb-md-5">
+              <img src="./graphics/logo_ufl.png" class="d-none d-md-block m-auto pt-5" style="max-width: 60%;">  <!-- Maria, endret max-with og la på pt-5-->
+              <img src="./graphics/logo_ufl_small.png" class="d-inline d-md-none m-auto pt-1" style="max-width: 60%;">
+              <button class="d-inline d-md-none" type="button" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">
+                  <img src="./graphics/meny.png" class="d-inline d-md-none m-auto align-items-end hamburger-button">
+              </button>
+            </div>
+
+            <div class="collapse dont-collapse-sm container-fluid px-0 py-5" id="collapseMenu"> <!-- Maria endret p-klasser + fjernet padding -->
+              <div class="row d-block m-auto px-2 px-lg-4 menu-item active">
+                <img src="./graphics/dashboard.png" class="menu-graphics-size d-inline"> <!-- Maria  display klasser-->
+                <button href="#" data-target="dashboard" type="button" class="btn btn-link menutext menubtn p-3 menu-buttons"
+                  id="dashboardbtn">Hagen</button> <!-- Maria la på p-3-->
+              </div>
+              <div class="row d-block m-auto px-2 px-lg-4 menu-item">
+                  <img src="./graphics/farmbot.png" class="menu-graphics-size d-inline"> <!-- Maria  display klasser-->
+                  <button href="#" data-target="farmbot" type="button" class="btn btn-link menutext menubtn p-3 menu-buttons"
+                    id="farmbotbtn">Farmbot</button> <!-- Maria la på p-3-->
+              </div>
+              <div class="row d-block m-auto px-2 px-lg-4 menu-item">
+                <img src="./graphics/sensors.png" class="menu-graphics-size d-inline"> <!-- Maria  display klasser-->
+                <button href="#" data-target="sensor" type="button" class="btn btn-link menutext menubtn p-3 menu-buttons" 
+                id="sensorbtn">Sensor</button> <!-- Maria la på p-3-->
+              </div>
+            </div>
+          </div>
+          <!-- Maria, Ny log inn knapp -->
+          <div class="collapse dont-collapse-sm col-12 align-self-end px-5 py-5 py-md-0" id="collapseMenu">
+              <button href="#" class="btn btn-block bg-white px-2 px-sm-4 menubtn" data-target="loginmenu" style="padding:0.5rem 2.5rem;">login</button>
+          </div>
+
+        </div>
+      </nav>
+
+
+
+
+
+      <!-- MAIN COLUMN-->
+      <div class="col-12 col-md-9 col-xl-10 content-col" style="overflow-y: scroll; height: 100%"> <!-- Maria, La på height -->
+
+        <!--  HEADER BAR -->
+        <div class="container-fluid" style="padding: 0;">
+          <div class="row px-3 pt-4 pb-2" style="background: #FFFFFF;">  <!--  Maria, fjernet størrelse i style, endret til padding i klassen-->
+              <img class="d-sm-inline-block d-none px-3" src="./graphics/temp.svg"  style="width: auto; height: 30px">
+            <div class="d-inline-block">
+                <script src="https://www.yr.no/sted/Norge/Oslo/Oslo/Skøyen/ekstern_boks_stripe.js"></script>
+                <noscript><a href="https://www.yr.no/sted/Norge/Oslo/Oslo/Skøyen/">yr.no: Værvarsel for Skøyen</a></noscript>
+            </div>  
+             <!--  Maria -  Flytter log in knappen, ny knapp i menyen -->
+            <div class="col-sm-2 text-align">
+            </div>
+          </div>
+        </div>
+
+        <!-- LOGIN MENU-->
+        <div class="container pt-5">
+        <div class="row justify-content-center">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+            <div class="page login wrapper" id="loginmenu">
+              <!-- class fadeInDown-->
+              
+                <div id="formContent">
+        
+                  <!--Header-->
+                  <div style="padding-top: 2rem;">
+                    <h5 class="timeseries-header">Become master of the sensors!</h5>
+                  </div>
+        
+                  <!-- Login Form -->
+                  <form>
+                    <input type="text" id="login" name="login" placeholder="login">
+                    <!--class="fadeIn second"-->
+                    <input type="text" id="password" name="login" placeholder="password">
+                    <!--class="fadeIn third" -->
+                    <input type="submit" value="Log In">
+                    <!--class="fadeIn fourth" -->
+                  </form>
+        
+                  <!-- Remind Passowrd -->
+                  <div id="formFooter">
+                    <a class="underlineHover" href="#">Forgot Password?</a>
+                  </div>
+        
+                </div>
+            
+            </div>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+      </div>
+
+        <!-- DASHBOARD PAGE -->
+        <div class="page active" id="dashboard">
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <h1 style="margin-top: 2%; margin-bottom: 2%; color: #535353;">Hagen</h1>
+
+
+              <div class="row" style="position: relative;">
+                <div class="col-sm-7">
+                  <div style="margin-bottom: 5%;">
+                    <p class="robototext">Grafene viser fuktigheten i jorda. Når fuktigheten går under nivået satt på 'Sensor'-siden, skrur vannet seg på automatisk. 
+                      På den måten vanner man kun plantene når de trenger det.</p>
+                  </div>
+                </div>
+                <div class="col-sm-5">
+                  <div class="float-sm-right" style="margin-bottom: 4%;">
+                    <!-- DASHBOARD RIGHTSIDE BUTTONS -->
+
+                    <!-- Maria erstattet dette med btn-group -->
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button type="button" data-target="grafana-cards" class="btn btn-primary dashboardbtn" id="grafer-btn" onclick=changeColorGraphBtn()>Grafer</button>
+                      <button type="button" data-target="img-and-info" class="btn btn-secondary dashboardbtn" id="planter-btn" onclick=changeColorPlantBtn()>Planter</button>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- "CARDS" -->
+
+              <!-- KASSE 1 -->
+              <div class="row">
+                <div class="col-sm-6" style="margin-bottom: 3%;"> <!-- Maria: Endret margin bottom  i alle kort-->
+                  <div class="container px-0 py-2 grafana-timeseries"> <!-- Maria: Fjerna shadows fra alle kort-->
+                    <h5 class="timeseries-heade px-3 py-2 card-heading">Kasse 1</h5>
+                    <div class="embed-responsive embed-responsive-16by9 grafana-cards showing">
+                      <iframe class="embed-responsive-item"
+                        src="http://51.120.77.91:3000/d-solo/nUMnmaeWk/eiendomsspar1?orgId=1&refresh=5s&from=now-3h&to=now&panelId=2"></iframe>
+                    </div>
+                    <div class="img-and-info">
+                      <img src="./graphics/carrots.jpg"  style="width: 100%">
+                      <p class="px-3 pt-3"><span style="font-weight: bold">Plantet:</span> Gulrøtter, poteter, squash</p>
+                      <p class="px-3">Trives best med: 20% jordfuktighet</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container px-0 py-2 grafana-timeseries">
+                    <h5 class="timeseries-heade px-3 py-2 card-heading">Kasse 2</h5>
+                    <div class="embed-responsive embed-responsive-16by9 grafana-cards showing">
+                      <iframe class="embed-responsive-item"
+                      src="http://51.120.77.91:3000/d-solo/nUMnmaeWk/eiendomsspar1?orgId=1&from=now-3h&to=now&panelId=3"></iframe>
+                    </div>
+                    <div>
+                      <img class="img-and-info" src="./graphics/zucchini.jpg"  style="width: 100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container px-0 py-2 grafana-timeseries">
+                    <h5 class="timeseries-heade px-3 py-2 card-heading">Kasse 3</h5>
+                    <div class="embed-responsive embed-responsive-16by9 grafana-cards showing">
+                      <iframe class="embed-responsive-item"
+                      src="http://51.120.77.91:3000/d-solo/nUMnmaeWk/eiendomsspar1?orgId=1&from=now-3h&to=now&panelId=4"></iframe>
+                    </div>
+                    <div>
+                      <img class="img-and-info" src="./graphics/carrots.jpg" style="width: 100%">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container px-0 py-2 grafana-timeseries">
+                    <h5 class="timeseries-heade px-3 py-2 card-heading">Kasse 4</h5>
+                    <div class="embed-responsive embed-responsive-16by9 grafana-cards showing">
+                      <iframe class="embed-responsive-item"
+                      src="http://51.120.77.91:3000/d-solo/nUMnmaeWk/eiendomsspar1?orgId=1&from=now-3h&to=now&panelId=5"></iframe>
+                    </div>
+                    <div>
+                      <img class="img-and-info" src="./graphics/carrots.jpg" style="width: 100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container px-0 py-2 grafana-timeseries">
+                    <h5 class="timeseries-heade px-3 py-2 card-heading">Kasse 5</h5>
+                    <div class="embed-responsive embed-responsive-16by9 grafana-cards showing">
+                      <iframe class="embed-responsive-item"
+                      src="http://51.120.77.91:3000/d-solo/nUMnmaeWk/eiendomsspar1?orgId=1&from=now-3h&to=now&panelId=6"></iframe>
+                    </div>
+                    <div>
+                      <img class="img-and-info" src="./graphics/carrots.jpg" style="width: 100%">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container px-0 py-2 grafana-timeseries">
+                    <h5 class="timeseries-heade px-3 py-2 card-heading">Kasse 6</h5>
+                    <div class="embed-responsive embed-responsive-16by9 grafana-cards showing">
+                      <iframe class="embed-responsive-item"
+                      src="http://51.120.77.91:3000/d-solo/nUMnmaeWk/eiendomsspar1?orgId=1&refresh=5s&from=now-3h&to=now&panelId=2"></iframe>
+                    </div>
+                    <div>
+                      <img class="img-and-info" src="./graphics/carrots.jpg" style="width: 100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container px-0 py-2 grafana-timeseries">
+                    <h5 class="timeseries-heade px-3 py-2 card-heading">Kasse 7</h5>
+                    <div class="embed-responsive embed-responsive-16by9 grafana-cards showing">
+                      <iframe class="embed-responsive-item"
+                      src="http://51.120.77.91:3000/d-solo/nUMnmaeWk/eiendomsspar1?orgId=1&from=now-3h&to=now&panelId=3"></iframe>
+                    </div>
+                    <div>
+                      <img class="img-and-info" src="./graphics/carrots.jpg" style="width: 100%">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container px-0 py-2 grafana-timeseries">
+                    <h5 class="timeseries-heade px-3 py-2 card-heading">Kasse 8</h5>
+                    <div class="embed-responsive embed-responsive-16by9 grafana-cards showing">
+                      <iframe class="embed-responsive-item"
+                      src="http://51.120.77.91:3000/d-solo/nUMnmaeWk/eiendomsspar1?orgId=1&from=now-3h&to=now&panelId=4"></iframe>
+                    </div>
+                    <div>
+                      <img class="img-and-info" src="./graphics/carrots.jpg" style="width: 100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container px-0 py-2 grafana-timeseries">
+                    <h5 class="timeseries-heade px-3 py-2 card-heading">Kasse 9</h5>
+                    <div class="embed-responsive embed-responsive-16by9 grafana-cards showing">
+                      <iframe class="embed-responsive-item"
+                      src="http://51.120.77.91:3000/d-solo/nUMnmaeWk/eiendomsspar1?orgId=1&from=now-3h&to=now&panelId=5"></iframe>
+                    </div>
+                    <div>
+                      <img class="img-and-info" src="./graphics/carrots.jpg" style="width: 100%">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container px-0 py-2 grafana-timeseries">
+                    <h5 class="timeseries-heade px-3 py-2 card-heading">Kasse 10</h5>
+                    <div class="embed-responsive embed-responsive-16by9 grafana-cards showing">
+                      <iframe class="embed-responsive-item"
+                      src="http://51.120.77.91:3000/d-solo/nUMnmaeWk/eiendomsspar1?orgId=1&from=now-3h&to=now&panelId=6"></iframe>
+                    </div>
+                    <div>
+                      <img class="img-and-info" src="./graphics/carrots.jpg" style="width: 100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div> <!-- empty side-column-->
+          </div>
+        </div> <!-- Hagen page ends-->
+
+
+        <!-- SENSOR PAGE-->
+        <div class="page" id="sensor">
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <div class="row">
+                <div class="col-sm-10">
+                  <h1 style="margin-top: 2%; margin-bottom: 2%; color: #535353;">Vanningskontroll</h1>
+                </div>
+                <div class="col-sm-2 btn-group">
+                  <button type="button" class="btn btn-secondary" id="submitSensorChangesBtn" disabled
+                  onclick="submitSensorChanges()">Registrer endring</button> <!-- Maria Endret farge på knapp-->
+                </div>
+            </div>
+              <!-- SLIDER 1 AND 2-->
+              <div class="row">
+
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container p-3 sensor-container-left">
+                    <h5 class="timeseries-header">Kasse 1</h5>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-10">
+                        <div class="slidecontainer">
+                          <input type="range" min="1" max="100" value="50" class="slider" id="sensorslider1">
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="sensor-value-box" style="text-align: center;">
+                          <span id="sensorvalue1"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container p-3 sensor-container-right">
+                    <h5 class="timeseries-header">Kasse 2</h5>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-10">
+                        <div class="slidecontainer">
+                          <input type="range" min="1" max="100" value="50" class="slider" id="sensorslider2">
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="sensor-value-box" style="text-align: center;">
+                          <span id="sensorvalue2"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SLIDER 3 AND 4-->
+              <div class="row">
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container p-3 sensor-container-left">
+                    <h5 class="timeseries-header">Kasse 3</h5>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-10">
+                        <div class="slidecontainer">
+                          <input type="range" min="1" max="100" value="50" class="slider" id="sensorslider3">
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="sensor-value-box" style="text-align: center;">
+                          <span id="sensorvalue3"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container p-3 sensor-container-right">
+                    <h5 class="timeseries-header">Kasse 4</h5>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-10">
+                        <div class="slidecontainer">
+                          <input type="range" min="1" max="100" value="50" class="slider" id="sensorslider4">
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="sensor-value-box" style="text-align: center;">
+                          <span id="sensorvalue4"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SLIDER 5 AND 6-->
+              <div class="row">
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container p-3 sensor-container-left">
+                    <h5 class="timeseries-header">Kasse 5</h5>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-10">
+                        <div class="slidecontainer">
+                          <input type="range" min="1" max="100" value="50" class="slider" id="sensorslider5">
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="sensor-value-box" style="text-align: center;">
+                          <span id="sensorvalue5"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container p-3 sensor-container-right">
+                    <h5 class="timeseries-header">Kasse 6</h5>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-10">
+                        <div class="slidecontainer">
+                          <input type="range" min="1" max="100" value="50" class="slider" id="sensorslider6">
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="sensor-value-box" style="text-align: center;">
+                          <span id="sensorvalue6"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SLIDER 7 AND 8 -->
+              <div class="row">
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container p-3 sensor-container-left">
+                    <h5 class="timeseries-header">Kasse 7</h5>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-10">
+                        <div class="slidecontainer">
+                          <input type="range" min="1" max="100" value="50" class="slider" id="sensorslider7">
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="sensor-value-box" style="text-align: center;">
+                          <span id="sensorvalue7"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container p-3 sensor-container-right">
+                    <h5 class="timeseries-header">Kasse 8</h5>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-10">
+                        <div class="slidecontainer">
+                          <input type="range" min="1" max="100" value="50" class="slider" id="sensorslider8">
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="sensor-value-box" style="text-align: center;">
+                          <span id="sensorvalue8"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SLIDER 9 AND 10 -->
+              <div class="row">
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container p-3 sensor-container-left">
+                    <h5 class="timeseries-header">Kasse 9</h5>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-10">
+                        <div class="slidecontainer">
+                          <input type="range" min="1" max="100" value="50" class="slider" id="sensorslider9">
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="sensor-value-box" style="text-align: center;">
+                          <span id="sensorvalue9"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6" style="margin-bottom: 3%;">
+                  <div class="container p-3 sensor-container-right">
+                    <h5 class="timeseries-header">Kasse 10</h5>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-10">
+                        <div class="slidecontainer">
+                          <input type="range" min="1" max="100" value="50" class="slider" id="sensorslider10">
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="sensor-value-box" style="text-align: center;">
+                          <span id="sensorvalue10"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div> <!-- Sensor page ends-->
+
+        <!-- FARMBOT PAGE-->
+        <div class="page" id="farmbot">
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <h1 style="margin-top: 2%; margin-bottom: 5%; color: #535353;">Farmbot</h1>
+              <img src="./graphics/takterrassen-farmbot-page-cropped.png" style="width: 100%;">
+              <p class="robototext" style="margin-top: 10%; margin-bottom: 10%;">
+                Farmbot er en robot som er utstyrt med forskjellige verktøy som gjør at mye av det manuelle hagearbeidet
+                kan automatiseres. Blant annet er roboten utstyrt med en nål med vakuumpumpe som kan hente og plante ut
+                frø,
+                og den har munnstykker for å vanne med.
+              </p>
+              <a class="farmbot-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Gå til farmbot</a>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div> <!-- Farmbot page ends-->
+
+      </div>
+    </div>
+  </div>
+  <script src="./js/sliders.js"></script>
+  <script src="./js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+html, body {
+height: 100%;
+font-family: Roboto;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.robototext {
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+color: #535353;
+}
+.menutext {
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 18px;
+color: #FFFFFF;
+}
+.menutext-selected {
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 21px;
+color: #6BD091;
+}
+.menu-col {
+background: linear-gradient(180deg, #00C25E 44.27%, #15BB99 100%);
+}
+.content-col {
+background-color: #F0F0F0;
+}
+.grafana-timeseries {
+background-color: #FFFFFF;  
+border-radius: 7px;
+}
+
+.sensor-container-left {
+border-radius: 7px;
+}
+.sensor-container-right {
+
+border-radius: 7px;
+}
+.sensor-value-box {
+text-align: center;
+width: 51px;
+height: 32px;
+background: #FFFFFF;
+border: 1px solid #BABABA;
+box-sizing: border-box;
+}
+.timeseries-header {
+color: #000000; 
+margin-top: 2%; 
+margin-bottom: 5%;
+font-family: Roboto;
+font-size: 18px;
+line-height: 21px;
+}
+
+/* MARIA  oppdaterte strl*/ 
+
+    
+.card-heading {
+    font-weight: bold;
+    color: #00C25E;
+}
+
+.btn {
+    padding: .5rem 1.5rem;
+    border-radius: 3.2rem;
+}
+.btn-group .btn.btn-primary {
+    background: #00C25E;
+    border:0
+}
+.btn-group .btn.btn-primary:active {
+    background: #00C25E;
+    border:0
+}
+
+.btn-group .btn.btn-secondary {
+    background: #E3E3E3;
+    border: 0;
+    color: black;
+}
+
+.menu-graphics-size { 
+    width: 23px;
+}
+
+
+.menu-buttons:active{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.menu-buttons:hover{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.farmbot-link {
+    border-bottom: 2px solid #00C25E;
+}
+
+.farmbot-link:hover {
+    border-bottom: 2px solid #0A8B4E;
+}
+
+nav .menu-item.active {
+    background-color: #00B459;
+}
+
+
+nav .menu-item:first-of-type {
+    border-top: 1px solid #02B85D;
+}
+
+nav .menu-item {
+    border-bottom: 1px solid #02B85D;
+}
+
+.hamburger-button {
+    width: 30px;
+}
+
+@media (min-width: 768px) {
+    .collapse.dont-collapse-sm {
+      display: block;
+    }
+  }
+
+/* Maria Slutt */
+
+.menubtn {
+}
+.dashboardbtn {
+}
+.page {
+display: none;
+}
+.grafana-cards {
+display: none !important;
+}
+.img-and-info {
+display: none !important;
+}
+.showing {
+display: block !important;
+}
+.active {
+display: block;
+}
+.slider {
+-webkit-appearance: none;
+width: 100%;
+height: 40px;
+border-radius: 29px;
+background: #d3d3d3;
+outline: none;
+opacity: 0.7;
+-webkit-transition: .2s;
+transition: opacity .2s;
+}
+
+.card {
+    border-radius: 7px;
+}
+
+.slider:hover {
+opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background: #4CAF50;
+cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+width: 25px;
+height: 25px;
+border-radius: 50%;
+background: #4CAF50;
+cursor: pointer;
+}
+
+a {
+    text-decoration: none ;
+    color: black;
+ }
+a:hover
+ {
+   color:black;
+   text-decoration:none;
+   cursor:pointer;
+  }
+
+h1 {
+    font-family: Roboto;
+}
