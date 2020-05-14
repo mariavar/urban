@@ -94,7 +94,7 @@ line-height: 21px;
 
 .menu-graphics-size { 
     width: 23px;
-    vertical-align: sub;
+    vertical-align: text-bottom;
 }
 
 
