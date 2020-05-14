@@ -32,35 +32,30 @@
               </a>
             </div>
 
-            <div class="collapse dont-collapse-sm container-fluid px-0 py-5" id="collapseMenu"> <!-- Maria endret p-klasser + fjernet padding -->
-              <div class="row d-block m-auto px-2 px-lg-4 menu-item active">
+            <div class="collapse multi-collapse dont-collapse-sm container-fluid px-0 py-5" id="collapseMenu"> <!-- Maria endret p-klasser + fjernet padding -->
+              <div class="row d-block m-auto px-2 px-lg-4 menu-item background">
                 <img src="./graphics/dashboard.png" class="menu-graphics-size d-inline"> <!-- Maria  display klasser-->
-                <button href="#" data-target="dashboard" type="button" class="btn btn-link menutext menubtn p-3 menu-buttons"
-                  id="dashboardbtn">Hagen</button> <!-- Maria la på p-3-->
+                <button href="#" data-target="dashboard" type="button" class="btn btn-link menutext menubtn p-3 menu-buttons" 
+                id="dashboardbtn" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">Hagen</button> <!-- Maria la på p-3-->
               </div>
               <div class="row d-block m-auto px-2 px-lg-4 menu-item">
                   <img src="./graphics/farmbot.png" class="menu-graphics-size d-inline"> <!-- Maria  display klasser-->
                   <button href="#" data-target="farmbot" type="button" class="btn btn-link menutext menubtn p-3 menu-buttons"
-                    id="farmbotbtn">Farmbot</button> <!-- Maria la på p-3-->
+                    id="farmbotbtn" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">Farmbot</button> <!-- Maria la på p-3-->
               </div>
               <div class="row d-block m-auto px-2 px-lg-4 menu-item">
                 <img src="./graphics/sensors.png" class="menu-graphics-size d-inline"> <!-- Maria  display klasser-->
                 <button href="#" data-target="sensor" type="button" class="btn btn-link menutext menubtn p-3 menu-buttons" 
-                id="sensorbtn">Sensor</button> <!-- Maria la på p-3-->
+                id="sensorbtn" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">Sensor</button> <!-- Maria la på p-3-->
               </div>
             </div>
           </div>
           <!-- Maria, Ny log inn knapp -->
-          <div class="collapse dont-collapse-sm col-12 align-self-end px-5 py-5 py-md-0" id="collapseMenu">
+          <div class="collapse multi-collapse dont-collapse-sm col-12 align-self-end px-5 py-5 py-md-0" id="collapseLogin">
               <button href="#" class="btn btn-block bg-white px-2 px-sm-4 menubtn" data-target="loginmenu" style="padding:0.5rem 2.5rem;">login</button>
           </div>
-
         </div>
       </nav>
-
-
-
-
 
       <!-- MAIN COLUMN-->
       <div class="col-12 col-md-9 col-xl-10 content-col" style="overflow-y: scroll; height: 100%"> <!-- Maria, La på height -->
