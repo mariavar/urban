@@ -138,11 +138,6 @@ nav .menu-item {
     }
   }
 
-@media (max-width: 768px) {
-    .sticky-top {
-        background: #F0F0F0;
-    }
-}
 
 /* Maria Slutt */
 
