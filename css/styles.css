@@ -115,7 +115,7 @@ line-height: 21px;
     border-bottom: 2px solid #0A8B4E;
 }
 
-nav .menu-item.active {
+nav .menu-item.background {
     background-color: #00B459;
 }
 
@@ -137,6 +137,12 @@ nav .menu-item {
       display: block;
     }
   }
+
+@media (max-width: 768px) {
+    .sticky-top {
+        background: #F0F0F0;
+    }
+}
 
 /* Maria Slutt */
 
